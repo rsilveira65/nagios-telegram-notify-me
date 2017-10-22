@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "command-line-args": "^4.0.7",
+    "messaging-api-telegram": "^0.5.0",
+    "node-emoji": "^1.8.1",
+    "yamljs": "^0.3.0"
+  }
+}
