@@ -79,7 +79,6 @@ function handleInputs() {
     const optionDefinitions = [
         { name: 'verbose', alias: 'v', type: Boolean },
         { name: 'messenger', alias: 'm', type: String },
-        { name: 'object_type', alias: 't', type: String },
         { name: 'hostname', alias: 'n', type: String },
         { name: 'state', alias: 's', type: String },
         { name: 'servicedesc', alias: 'd', type: String },
