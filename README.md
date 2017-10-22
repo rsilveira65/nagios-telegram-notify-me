@@ -1,4 +1,5 @@
 # nagios-telegram-notify-me
+![alt tag](https://i.imgur.com/cv1tWfF.png)
 
 ## Project Setup
 ```bash
@@ -23,25 +24,25 @@ To configure the script, set the follow parameters:
 Examples:
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=service --servicestate="OK" --hostname="rsilveira.com" --servicedesc="load" --output="OK - load average: 0.02 0.01 0.01"
+$ node main.js --verbose --messenger=telegram --object_type=service --state="OK" --hostname="rsilveira.com" --servicedesc="load" --output="OK - load average: 0.02 0.01 0.01"
 ```
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=service --servicestate="WARNING" --hostname="rsilveira.com" --servicedesc="load" --output="WARNING - load average: 3.48 4.19 2.74"
+$ node main.js --verbose --messenger=telegram --object_type=service --state="WARNING" --hostname="rsilveira.com" --servicedesc="load" --output="WARNING - load average: 3.48 4.19 2.74"
 ```
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=service --servicestate="CRITICAL" --hostname="rsilveira.com" --servicedesc="load" --output="CRITICAL - load average: 233.29 154.35 15.05"
+$ node main.js --verbose --messenger=telegram --object_type=service --state="CRITICAL" --hostname="rsilveira.com" --servicedesc="load" --output="CRITICAL - load average: 233.29 154.35 15.05"
 ```
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=host --hoststate="UNREACHABLE" --hostname="rsilveira.com" --output="Network Unreachable (rsilveira.com)"
+$ node main.js --verbose --messenger=telegram --object_type=host --state="UNREACHABLE" --hostname="rsilveira.com" --output="Network Unreachable (rsilveira.com)"
 ```
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=host --hoststate="DOWN" --hostname="rsilveira.com" --output="PING CRITICAL - Packet loss = 100%"
+$ node main.js --verbose --messenger=telegram --object_type=host --state="DOWN" --hostname="rsilveira.com" --output="PING CRITICAL - Packet loss = 100%"
 ```
 
 ```bash
-$ node main.js --verbose --messenger=telegram --object_type=host --hoststate="DOWN" --hostname="rsilveira.com" --hoststate="UP" --output="PING OK - Packet loss = 0%, RTA = 3.74 ms"
+$ node main.js --verbose --messenger=telegram --object_type=host --state="UP" --hostname="rsilveira.com" --output="PING OK - Packet loss = 0%, RTA = 3.74 ms"
 ```

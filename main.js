@@ -14,39 +14,30 @@ const options = handleInputs();
 
 let emojiMessage = '';
 
-if (options.object_type == 'host') {
-    switch(options.hoststate) {
-        case 'UP':
-            emojiMessage = emoji.get('up');
-            break;
-        case 'DOWN':
-            emojiMessage = emoji.get('arrow_down');
-            break;
-        case 'UNREACHABLE':
-            emojiMessage = emoji.get('information_desk_person');
-            break;
-        default:
-            emojiMessage = emoji.get('coffee');
-    }
-} 
-
-if (options.object_type == 'service') {
-    switch(options.servicestate) {
-        case 'OK':
-            emojiMessage = emoji.get('ok');
-            break;
-        case 'WARNING':
-            emojiMessage = emoji.get('warning');
-            break;
-        case 'CRITICAL':
-            emojiMessage = emoji.get('sos');
-            break;
-        case 'UNKNOWN':
-            emojiMessage = emoji.get('information_desk_person');
-            break;
-        default:
-            emojiMessage = emoji.get('coffee');
-    }
+switch(options.state) {
+    case 'UP':
+        emojiMessage = emoji.get('up');
+        break;
+    case 'DOWN':
+        emojiMessage = emoji.get('arrow_down');
+        break;
+    case 'UNREACHABLE':
+        emojiMessage = emoji.get('information_desk_person');
+        break;
+    case 'OK':
+        emojiMessage = emoji.get('ok');
+        break;
+    case 'WARNING':
+        emojiMessage = emoji.get('warning');
+        break;
+    case 'CRITICAL':
+        emojiMessage = emoji.get('sos');
+        break;
+    case 'UNKNOWN':
+        emojiMessage = emoji.get('information_desk_person');
+        break;
+    default:
+        emojiMessage = emoji.get('coffee');
 }
 
 let message = `${emojiMessage} ${options.hostname} ${options.output}`;
@@ -89,9 +80,8 @@ function handleInputs() {
         { name: 'verbose', alias: 'v', type: Boolean },
         { name: 'messenger', alias: 'm', type: String },
         { name: 'object_type', alias: 't', type: String },
-        { name: 'hotstate', alias: 'h', type: String },
         { name: 'hostname', alias: 'n', type: String },
-        { name: 'servicestate', alias: 's', type: String },
+        { name: 'state', alias: 's', type: String },
         { name: 'servicedesc', alias: 'd', type: String },
         { name: 'output', alias: 'o', type: String }
     ]
