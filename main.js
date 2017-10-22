@@ -70,7 +70,7 @@ function getParameters() {
 }
 
 /*
-* Sends message throgouth Telegram API
+* Sends message through Telegram API
 * @message - String
 * @chatId - Integer
 */
