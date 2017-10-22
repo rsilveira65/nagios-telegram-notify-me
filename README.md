@@ -1,4 +1,4 @@
-# nagios-notify-me
+# nagios-telegram-notify-me
 
 ## Project Setup
 ```bash
