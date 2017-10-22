@@ -1,3 +1,7 @@
+/*
+* nagios-telegram-notify-me
+* @author: Rafael Silveira <rsilveiracc@gmail.com>
+*/
 const {TelegramClient} = require('messaging-api-telegram');
 const commandLineArgs = require('command-line-args');
 YAML = require('yamljs');
@@ -58,17 +62,28 @@ Object.keys(parameters.chat_ids).forEach(function(key) {
     sendMessage(message, chatObject.id);   
 });
 
+/*
+* Parses yaml configuration file.
+*/
 function getParameters() {
     return YAML.load('config/config.yml');
 }
 
-function sendMessage(message, chat_id) {
-    client.sendMessage(chat_id, message, {
+/*
+* Sends message throgouth Telegram API
+* @message - String
+* @chatId - Integer
+*/
+function sendMessage(message, chatId) {
+    client.sendMessage(chatId, message, {
         disable_web_page_preview: true,
         disable_notification: true,
     });
 }
 
+/*
+* Handles input arguments.
+*/
 function handleInputs() {
     const optionDefinitions = [
         { name: 'verbose', alias: 'v', type: Boolean },
