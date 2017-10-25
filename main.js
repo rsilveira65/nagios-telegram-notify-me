@@ -8,6 +8,7 @@ YAML = require('yamljs');
 emoji = require('node-emoji');
 
 parameters = getParameters()
+
 const client = TelegramClient.connect(parameters.token);
 
 const options = handleInputs();
@@ -50,7 +51,7 @@ Object.keys(parameters.chat_ids).forEach(function(key) {
         console.log(message);
     }
 
-    sendMessage(message, chatObject.id);   
+    sendMessage(message, chatObject.id, chatObject.disable_notification);   
 });
 
 /*
@@ -64,11 +65,12 @@ function getParameters() {
 * Sends message through Telegram API
 * @message - String
 * @chatId - Integer
+* @disableNotification - bool
 */
-function sendMessage(message, chatId) {
+function sendMessage(message, chatId, disableNotification = true) {
     client.sendMessage(chatId, message, {
         disable_web_page_preview: true,
-        disable_notification: true,
+        disable_notification: disableNotification,
     });
 }
 
