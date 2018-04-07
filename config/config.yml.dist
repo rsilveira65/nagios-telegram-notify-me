@@ -1,6 +1,6 @@
 chat_ids:
   - name: 'YourName'
-    id: 2342332542
+    id: 32324324
     only_danger_alerts: false
     disable_notification: true
-token: 'YourTelegramApiToken'
+token: 'YourTelegramAPIToken'
