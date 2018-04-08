@@ -7,9 +7,9 @@
 const emoji = require('node-emoji');
 
 //Local Modules
-const telegramService = require('./services/telegramService');
-const configService = require('./services/configService');
-const commandLineService = require('./services/commandLineService');
+const telegramService = require('./application/services/telegramService');
+const configService = require('./application/services/configService');
+const commandLineService = require('./application/services/commandLineService');
 
 const options = commandLineService.handleInputs();
 const parameters = configService.getParameters();
@@ -33,7 +33,7 @@ switch(options.state) {
         emojiMessage = emoji.get('warning');
         break;
     case 'CRITICAL':
-        emojiMessage = emoji.get('sos');
+        emojiMessage = emoji.get('sos');    
         break;
     case 'UNKNOWN':
         emojiMessage = emoji.get('information_desk_person');
