@@ -6,8 +6,6 @@ const YAML = require('yamljs');
 /*
  * Parses yaml configuration file.
  */
-const getParameters = () => {
-    return YAML.load(__dirname + '/../config/config.yml');
-};
+const getParameters = () => YAML.load(__dirname + '/../config/config.yml');
 
 module.exports = {getParameters};
